@@ -38,9 +38,14 @@ namespace UPES.EF
     public class StudentAdmin : IStudentAdmin
     {
         Context db;
-        public IRepository<Student> Students
+
+        public StudentAdmin(Context _db)
         {
-            get { return new Repository<Student>(db.Students); }
+            db = _db;
+        }
+        public IRepository<Course> Courses
+        {
+            get { return new Repository<Course>(db.Courses); }
         }
 
         public void SaveChanges()

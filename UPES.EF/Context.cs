@@ -16,10 +16,14 @@ namespace UPES.EF
         }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<Faculty> Faculties { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Course> Courses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("upes");
+            //modelBuilder.HasDefaultSchema("upes");
             //modelBuilder.Entity<Client>().HasMany(x => x.RedirectUris).WithRequired();
             //modelBuilder.Entity<Application>().HasMany(x => x.Scopes).WithRequired();
             //modelBuilder.Entity<Scope>().HasMany(x => x.AllowedClients).WithMany();
