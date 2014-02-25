@@ -33,12 +33,11 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Interfaces\IStudentAdmin.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Course.cs" />
@@ -49,7 +48,6 @@
     <Compile Include="Models\Specialization.cs" />
     <Compile Include="Models\Intake.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudyResult.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

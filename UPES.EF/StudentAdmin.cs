@@ -48,6 +48,20 @@ namespace UPES.EF
             get { return new Repository<Course>(db.Courses); }
         }
 
+        public IRepository<Subject> Subjects
+        {
+            get { return new Repository<Subject>(db.Subjects); }
+        }
+        public IRepository<Department> Departments
+        {
+            get { return new Repository<Department>(db.Departments); }
+        }
+
+        public IRepository<Faculty> Faculties
+        {
+            get { return new Repository<Faculty>(db.Faculties); }
+        }
+
         public void SaveChanges()
         {
             try

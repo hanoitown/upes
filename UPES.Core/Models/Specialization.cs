@@ -14,7 +14,5 @@ namespace UPES.Core.Models
         public string Code { get; set; }
         public string Name { get; set; }
         public virtual ICollection<Intake> Intakes { get; set; } // Có nhiều lớp 
-        public virtual ICollection<Course> CourseProgram { get; set; }
-
     }
 }

@@ -8,11 +8,11 @@ namespace UPES.Core.Models
     /// <summary>
     /// Khoá
     /// </summary>
-    public class Category
+    public enum Category
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public virtual ICollection<Intake> Intakes { get; set; }
-
+        K45,
+        K46,
+        K47,
+        K48
     }
 }

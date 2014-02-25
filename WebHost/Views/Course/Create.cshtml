@@ -1,4 +1,4 @@
-﻿@model UPES.Core.Models.Course
+﻿@model WebHost.Models.CourseInputModel
 
 @{
     ViewBag.Title = "Create";
@@ -6,44 +6,60 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Course</h4>
         <hr />
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Code, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Subjects, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Code)
-                @Html.ValidationMessageFor(model => model.Code)
+                @Html.DropDownList("Course.SubjectId", Model.Subjects, string.Empty)
+                @Html.ValidationMessageFor(model => model.Course.SubjectId)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Faculties, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Name)
-                @Html.ValidationMessageFor(model => model.Name)
+                @Html.DropDownList("Course.FacultyId", Model.Faculties, string.Empty)
+                @Html.ValidationMessageFor(model => model.Course.FacultyId)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Start, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Course.Code, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Start)
-                @Html.ValidationMessageFor(model => model.Start)
+                @Html.EditorFor(model => model.Course.Code)
+                @Html.ValidationMessageFor(model => model.Course.Code)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Credit, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Course.Name, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Credit)
-                @Html.ValidationMessageFor(model => model.Credit)
+                @Html.EditorFor(model => model.Course.Name)
+                @Html.ValidationMessageFor(model => model.Course.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Course.Start, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Course.Start)
+                @Html.ValidationMessageFor(model => model.Course.Start)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Course.Credit, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Course.Credit)
+                @Html.ValidationMessageFor(model => model.Course.Credit)
             </div>
         </div>
 

@@ -14,10 +14,7 @@ namespace UPES.Core.Models
         public bool Gender { get; set; }
         public Specialization Specialization { get; set; }
         public Intake Intake { get; set; }
-        public virtual ICollection<Result> Results { get; set; }
-        public virtual ICollection<Course> Taking { get; set; }
-        public virtual ICollection<StudyResult> StudyResults { get; set; }
-
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
 
     }
 }

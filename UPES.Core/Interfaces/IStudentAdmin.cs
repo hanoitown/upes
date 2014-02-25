@@ -17,7 +17,9 @@ namespace UPES.Core.Interfaces
     public interface IStudentAdmin
     {
         IRepository<Course> Courses { get; }
-
+        IRepository<Subject> Subjects { get; }
+        IRepository<Department> Departments { get; }
+        IRepository<Faculty> Faculties { get; }
         void SaveChanges();
     }
 }
