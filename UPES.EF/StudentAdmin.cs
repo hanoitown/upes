@@ -62,6 +62,11 @@ namespace UPES.EF
             get { return new Repository<Faculty>(db.Faculties); }
         }
 
+        public IRepository<Exam> Exams
+        {
+            get { return new Repository<Exam>(db.Exams); }
+        }
+
         public void SaveChanges()
         {
             try

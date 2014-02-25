@@ -20,6 +20,7 @@ namespace UPES.EF
         public DbSet<Department> Departments { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Exam> Exams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

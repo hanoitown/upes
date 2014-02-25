@@ -27,7 +27,7 @@
   <Class Name="UPES.Core.Models.Exam">
     <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAACAAAAAAAIAAAAQACAEAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAGAAAAACAAAAAAAIAAAAQACAEAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Models\Exam.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -91,7 +91,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UPES.Core.Models.Enrollment">
-    <Position X="9.75" Y="3" Width="1.5" />
+    <Position X="9.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAGAAAAQAAAAAAAAIAAAAAACAAAAAAAAAAAAAECAAA=</HashCode>
       <FileName>Models\Enrollment.cs</FileName>
