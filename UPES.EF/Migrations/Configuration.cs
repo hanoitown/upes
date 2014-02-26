@@ -61,6 +61,13 @@
                     new Department { Code = "BMV", Name = "BM Vật - Judo" }
             );
 
+            context.Specializations.AddOrUpdate(
+                    d => d.Code,
+                    new Specialization { Code = "DK", Name = "Điền kinh" },
+                    new Specialization { Code = "TD", Name = "Thể dục" }
+            );
+
+
             context.Subjects.AddOrUpdate(
                     s => s.Code,
                     new Subject { Code = "GP1", Name = "Giải phẫu người 1", IsTheory = true },
@@ -124,7 +131,7 @@
                     new Subject { Code = "TD2", Name = "Thể dục 2", IsTheory = false },
                     new Subject { Code = "AN1", Name = "Âm nhạc vũ đạo", IsTheory = false },
                     new Subject { Code = "VO", Name = "Võ thuật", IsTheory = false },
-                        new Subject { Code = "VAT", Name = "Vật", IsTheory = false }
+                    new Subject { Code = "VAT", Name = "Vật", IsTheory = false }
                 );
         }
     }

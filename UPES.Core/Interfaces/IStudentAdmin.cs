@@ -21,6 +21,10 @@ namespace UPES.Core.Interfaces
         IRepository<Department> Departments { get; }
         IRepository<Faculty> Faculties { get; }
         IRepository<Exam> Exams { get; }
+        IRepository<Specialization> Specializations { get; }
+        IRepository<Intake> Intakes { get; }
+        IRepository<Enrollment> Enrollments { get; }
+
         void SaveChanges();
     }
 }

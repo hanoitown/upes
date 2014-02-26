@@ -13,6 +13,7 @@ namespace UPES.Core.Models
         public string Description { get; set; } // Lý thuyết, thực hành
         public bool IsTheory { get; set; }
         public int BaseCredit { get; set; } // Số đơn vị học trình
+        public int? DepartmentId { get; set; }
         public Department Department { get; set; } // Bộ môn giảng dạy        
         public virtual ICollection<Course> Courses { get; set; }
 

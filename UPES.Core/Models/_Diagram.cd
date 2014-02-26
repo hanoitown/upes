@@ -3,12 +3,9 @@
   <Class Name="UPES.Core.Models.Student">
     <Position X="9.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAIACAAAAgAAQAAAAAACAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AAACAQAAAAAAIACAAAAgAAQAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Student.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Intake" />
-    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Enrollments" />
     </ShowAsCollectionAssociation>
@@ -37,7 +34,7 @@
   <Class Name="UPES.Core.Models.Subject">
     <Position X="4.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAgAQQAEAAAAAAABAAAABAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAggAAAAAAgAQQAEAAAAAAABAAAABAAAAA=</HashCode>
       <FileName>Models\Subject.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -47,34 +44,36 @@
   <Class Name="UPES.Core.Models.Department">
     <Position X="2.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAEAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAEAQAAAAAIAAAAAgAAQAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Models\Department.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
+      <Property Name="Specializations" />
       <Property Name="Subjects" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="UPES.Core.Models.Intake">
-    <Position X="7.5" Y="6" Width="1.5" />
+    <Position X="7.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAABAAAAIAAAAAgAAQAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <HashCode>AAICAAAABEAAAAAAAAAgAAQAAAAAAAAAAAAAAAAACEA=</HashCode>
       <FileName>Models\Intake.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Category" />
-      <Property Name="Specialization" />
-      <Property Name="Faculty" />
-    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Students" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="UPES.Core.Models.Specialization">
     <Position X="4.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACQAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACQAAAAAAAgAAAAAAgAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Specialization.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Intakes" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="UPES.Core.Models.Faculty">
-    <Position X="4.75" Y="8.5" Width="1.5" />
+    <Position X="4.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAACAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Faculty.cs</FileName>
@@ -86,7 +85,7 @@
   <Class Name="UPES.Core.Models.ExamResult">
     <Position X="12.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAABAAQCAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAhAAQCAAACAAAA=</HashCode>
       <FileName>Models\Result.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -100,8 +99,8 @@
       <Property Name="Results" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Enum Name="UPES.Core.Models.Category" Collapsed="true">
-    <Position X="9.5" Y="8.75" Width="1.5" />
+  <Enum Name="UPES.Core.Models.Category">
+    <Position X="9.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Models\Category.cs</FileName>

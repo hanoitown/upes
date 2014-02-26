@@ -13,6 +13,9 @@ namespace UPES.Core.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
+        public int? FacultyId { get; set; }
+        public virtual Faculty Faculty { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
+        public virtual ICollection<Specialization> Specializations { get; set; }
     }
 }

@@ -14,8 +14,9 @@ namespace UPES.Core.Models
         public string Code { get; set; }
         public string Name { get; set; }
         public string Year { get; set; }
-        public Category Category { get; set; }
-        public Specialization Specialization { get; set; }
-        public Faculty Faculty { get; set; }
+        public int SpecializationId { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual Specialization Specialization { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

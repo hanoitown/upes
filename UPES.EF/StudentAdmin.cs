@@ -66,6 +66,18 @@ namespace UPES.EF
         {
             get { return new Repository<Exam>(db.Exams); }
         }
+        public IRepository<Intake> Intakes
+        {
+            get { return new Repository<Intake>(db.Intakes); }
+        }
+        public IRepository<Specialization> Specializations
+        {
+            get { return new Repository<Specialization>(db.Specializations); }
+        }
+        public IRepository<Enrollment> Enrollments
+        {
+            get { return new Repository<Enrollment>(db.Enrollments); }
+        }
 
         public void SaveChanges()
         {
@@ -75,7 +87,7 @@ namespace UPES.EF
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

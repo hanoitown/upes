@@ -9,7 +9,9 @@ namespace UPES.Core.Models
     {
         public int Id { get; set; }
         public int Mark { get; set; }
+        public int EnrollmentId { get; set; }
         public virtual Enrollment Enrollment { get; set; }
+        public int ExamId { get; set; }
         public virtual Exam Exam { get; set; }
     }
 }

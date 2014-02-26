@@ -12,7 +12,7 @@ namespace UPES.Core.Models
         public string Name { get; set; }
         public string Code { get; set; }
         public bool Gender { get; set; }
-        public Specialization Specialization { get; set; }
+        public int IntakeId { get; set; }
         public Intake Intake { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; }
 
