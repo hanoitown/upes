@@ -4,40 +4,78 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using UPES.Core.Interfaces;
+using PagedList;
 
 namespace WebHost.Controllers
 {
-    public class StudentController : BaseController
+    public class SubjectController : BaseController
     {
-        public StudentController(IStudentAdmin repo)
+        public SubjectController(IStudentAdmin repo)
             : base(repo)
         {
 
         }
 
         //
-        // GET: /Student/
-        public ActionResult Index()
+        // GET: /Subject/
+        //public ActionResult Index()
+        //{
+        //    return View(_repo.Subjects.All);
+        //}
+
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(_repo.Students.All);
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var subjects = _repo.Subjects.All;
+
+            if (!String.IsNullOrEmpty(searchString))
+                subjects = subjects.Where(s => s.Name.ToUpper().Contains(searchString.ToUpper()));
+
+
+            switch (sortOrder)
+            {
+                case "Name_desc":
+                    subjects = subjects.OrderByDescending(s => s.Name);
+                    break;
+                default:
+                    subjects = subjects.OrderBy(s => s.Name);
+                    break;
+            }
+
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(subjects.ToPagedList(pageNumber, pageSize));
+
         }
 
         //
-        // GET: /Student/Details/5
+        // GET: /Subject/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
         //
-        // GET: /Student/Create
+        // GET: /Subject/Create
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Student/Create
+        // POST: /Subject/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -54,14 +92,14 @@ namespace WebHost.Controllers
         }
 
         //
-        // GET: /Student/Edit/5
+        // GET: /Subject/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
         //
-        // POST: /Student/Edit/5
+        // POST: /Subject/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -78,14 +116,14 @@ namespace WebHost.Controllers
         }
 
         //
-        // GET: /Student/Delete/5
+        // GET: /Subject/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
         //
-        // POST: /Student/Delete/5
+        // POST: /Subject/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -91,6 +91,8 @@ namespace WebHost.Controllers
                     item.Code = course.Code;
                     item.Start = course.Start;
                     item.Credit = course.Credit;
+                    item.FacultyId = course.FacultyId;
+                    item.SubjectId = course.SubjectId;
                     _repo.SaveChanges();
 
                     return RedirectToAction("Index");

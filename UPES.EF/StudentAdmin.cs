@@ -78,6 +78,10 @@ namespace UPES.EF
         {
             get { return new Repository<Enrollment>(db.Enrollments); }
         }
+        public IRepository<Student> Students
+        {
+            get { return new Repository<Student>(db.Students); }
+        }
 
         public void SaveChanges()
         {

@@ -24,7 +24,7 @@ namespace UPES.Core.Interfaces
         IRepository<Specialization> Specializations { get; }
         IRepository<Intake> Intakes { get; }
         IRepository<Enrollment> Enrollments { get; }
-
+        IRepository<Student> Students { get; }
         void SaveChanges();
     }
 }

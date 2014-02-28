@@ -69,17 +69,27 @@ namespace WebHost.Controllers
         // GET: /Exam/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var courses = _repo.Courses.All;
+            var exam = _repo.Exams.All.Single(e => e.Id == id);
+
+            var vm = new ExamInputModel(exam, courses);
+            return View(vm);
         }
 
         //
         // POST: /Exam/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Exam exam)
         {
             try
             {
                 // TODO: Add update logic here
+                var item = _repo.Exams.All.Single(e => e.Id == id);
+                item.Name = exam.Name;
+                item.Where = exam.Where;
+                item.When = exam.When;
+                item.CourseId = exam.CourseId;
+                _repo.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -93,17 +103,24 @@ namespace WebHost.Controllers
         // GET: /Exam/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var courses = _repo.Courses.All;
+            var exam = _repo.Exams.All.Single(e => e.Id == id);
+
+            var vm = new ExamInputModel(exam, courses);
+            return View(vm);
         }
 
         //
         // POST: /Exam/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Exam exam)
         {
             try
             {
                 // TODO: Add delete logic here
+                var item = _repo.Exams.All.Single(e => e.Id == id);
+                _repo.Exams.Remove(exam);
+                _repo.SaveChanges();
 
                 return RedirectToAction("Index");
             }

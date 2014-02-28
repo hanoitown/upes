@@ -7,37 +7,36 @@ using UPES.Core.Interfaces;
 
 namespace WebHost.Controllers
 {
-    public class StudentController : BaseController
+    public class IntakeController : BaseController
     {
-        public StudentController(IStudentAdmin repo)
+        public IntakeController(IStudentAdmin repo)
             : base(repo)
         {
 
         }
-
         //
-        // GET: /Student/
+        // GET: /Intake/
         public ActionResult Index()
         {
-            return View(_repo.Students.All);
+            return View();
         }
 
         //
-        // GET: /Student/Details/5
+        // GET: /Intake/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
         //
-        // GET: /Student/Create
+        // GET: /Intake/Create
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Student/Create
+        // POST: /Intake/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -54,14 +53,14 @@ namespace WebHost.Controllers
         }
 
         //
-        // GET: /Student/Edit/5
+        // GET: /Intake/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
         //
-        // POST: /Student/Edit/5
+        // POST: /Intake/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -78,14 +77,14 @@ namespace WebHost.Controllers
         }
 
         //
-        // GET: /Student/Delete/5
+        // GET: /Intake/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
         //
-        // POST: /Student/Delete/5
+        // POST: /Intake/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
